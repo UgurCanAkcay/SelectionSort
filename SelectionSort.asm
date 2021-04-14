@@ -2,7 +2,7 @@
 org 100h         
 
 
-MOV BX,0200H                  ;sayilarin yerlestirilmesi
+MOV BX,0200H     ;sayilarin yerlestirilmesi
 MOV BYTE PTR [bx],55h
 MOV BYTE PTR [bx+1],66H
 MOV BYTE PTR [bx+2],54H
@@ -38,11 +38,11 @@ HLT            ; bitir
 
 @SKIP:
 MOV CL,AL ; saklama
-MOV AL,DL ; AL = DL en küçük sayının indisi kopyalanır
+MOV AL,DL ; AL = DL en küçük sayinin indisi kopyalanir
 MOV DL,CL ; DL = AL en kucuk sayi kopyalanir
 
 MOV CL ,[BX+SI]         ; saklama
-MOV BYTE PTR [BX+SI],AL ; yeni en küçük sayının indisi kopyalanır
+MOV BYTE PTR [BX+SI],AL ; yeni en küçük sayinin indisi kopyalanir
 MOV BYTE PTR [BX+DI],CL ; yeni en kucuk sayi kopyalanir
 
 INC SI          ;  SI degerini 1 arttirir    
@@ -51,4 +51,3 @@ JBE INNER_LOOP  ; Ic dongu tekrar
 JA OUTER_LOOP   ; Dis dongu tekrar
 
 HLT ;programı sonlandırır.
-;ret
